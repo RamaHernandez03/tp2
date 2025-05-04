@@ -18,7 +18,6 @@ def mostrar_menu():
 
 def normalizar(texto):
     """ Convierte el texto a minsculas y divide en palabras alfaNum. """
-
     texto = texto.lower()
     palabra = ""
     palabras = []
@@ -36,7 +35,6 @@ def normalizar(texto):
 
 def tokenizar_segmentos(palabra):
     """ Te arma los segmentos de Longitud N >= 3 """
-
     n = 3
     segmentos = set()
     for i in range(len(palabra)):
@@ -45,9 +43,7 @@ def tokenizar_segmentos(palabra):
     return segmentos
 
 def busqueda_binaria(lista, clave):
-    """ busca una clave en una lista de tuplas ordenadas 
-    usando el algoritmo de busqueda binaria. """
-
+    """ busca una clave en una lista de tuplas ordenadas usando la busqueda binaria. """
     izquierda = 0
     derecha = len(lista) - 1
     while izquierda <= derecha:
@@ -66,7 +62,6 @@ def busqueda_binaria(lista, clave):
 def insertar_en_orden(indice, clave, tweet_id):
     """ inserta una clave y su id en orden alfabetico en el indice.
      Si la clave ya existe, agrega el id. """
-
     izquierda = 0
     derecha = len(indice)
     while izquierda < derecha:
@@ -86,7 +81,6 @@ def insertar_en_orden(indice, clave, tweet_id):
 
 def crear_tweet(tweets, indice_palabras, indice_segmentos, siguiente_id):
     """ te crea un "tweet", actualiza indices y devuelve el siguiente id. """
-
     while True:
         print("Ingrese su tweet: ")
         tweet = input(" ").strip()
@@ -107,7 +101,6 @@ def crear_tweet(tweets, indice_palabras, indice_segmentos, siguiente_id):
 
 def buscar_tweet(tweets, indice_palabras, indice_segmentos):
     """ busca "tweets", Con palabras claves o segmentos de palabras claves. """
-
     print("Ingrese el tweet que quiere buscar: ")
     tweet = input(" ").strip()
     tokens_busqueda = normalizar(tweet)
@@ -147,7 +140,6 @@ def buscar_tweet(tweets, indice_palabras, indice_segmentos):
 
 def eliminar_tweet(tweets, indice_palabras, indice_segmentos):
     """ Elimina si se quiere 1 o mas "tweets", y ademas actualiza los indices. """
-
     while True:
         print("Ingrese el tweet a eliminar:")
         tweet = input(" ").strip()
@@ -253,5 +245,7 @@ def main():
 # Esta parte del código se ejecuta al final, asegurando que se ejecute el programa
 # mediante la terminal correctamente y permitiendo que se puedan realizar
 # los tests de forma automática y aislada.
+
+
 if __name__ == "__main__":
     main()
